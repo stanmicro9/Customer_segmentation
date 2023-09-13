@@ -14,25 +14,10 @@ import matplotlib.pyplot as plt
 import plotly.figure_factory as ff
 import joblib
 
-filename='/content/final_model.sav'
-loaded_model=pickle.load(open(filename, 'rb'))
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title("Customer Segmentation App")
 data=pd.read_csv('/content/Mall_Customers.csv')
 st.text('Please enter your data...')
-
-def prepare_input_data_for_model(age, gender, annual_income, spending_score):
-    if gender == 'M':
-        sex = 1
-    else:
-        sex = 0
-
-    # Prepare input data as a list
-    input_data = [Age, gender, Annual_income, Spending_score]
-
-    # Convert the list to a 2D array
-    sample = np.array(input_data).reshape(-1, len(input_data))
-    return sample
 
 cluster_names = {
     0: "0-Low annual income, Low spending score",
